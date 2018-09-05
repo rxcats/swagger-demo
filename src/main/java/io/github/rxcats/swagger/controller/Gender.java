@@ -1,4 +1,5 @@
 package io.github.rxcats.swagger.controller;
 
-public class Gender {
+public enum Gender {
+    none, male, female
 }

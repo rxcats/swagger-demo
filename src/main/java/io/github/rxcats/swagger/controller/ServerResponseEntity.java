@@ -1,22 +1,22 @@
-package io.github.rxcats.swagger.domain.entity;
+package io.github.rxcats.swagger.controller;
 
 import org.springframework.lang.Nullable;
 
 import lombok.Data;
 
 @Data
-public class ServerResponseEntity<T> {
+public class ServerResponseEntity {
 
     private int code = 200;
 
-    private T result;
+    private Object result;
 
     private String message = "Success";
 
-    public static <T> ServerResponseEntity of(@Nullable T result) {
-        ServerResponseEntity entity = new ServerResponseEntity<>();
-        entity.result = result;
-        return entity;
+    public static ServerResponseEntity of(@Nullable Object result) {
+        ServerResponseEntity res = new ServerResponseEntity();
+        res.result = result;
+        return res;
     }
 
 }
